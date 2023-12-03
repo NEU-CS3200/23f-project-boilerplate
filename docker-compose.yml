@@ -62,18 +62,20 @@ services:
 
   ##################################################################
   # configure the AppSmith container (borrowed directly from Appsmith)
-#   appsmith:
-#     image: index.docker.io/appsmith/appsmith-ce
-#     container_name: appsmith
-#     ports:
-#       - "8080:80"
-#       - "4443:443"
-#     volumes:
-#       - ./stacks:/appsmith-stacks
-#     restart: unless-stopped
+  appsmith:
+    image: index.docker.io/appsmith/appsmith-ce
+    container_name: appsmith
+    ports:
+      - "8080:80"
+      - "4443:443"
+    volumes:
+      - ./stacks:/appsmith-stacks
+    restart: unless-stopped
 
 secrets:
   secret_db_pw:
     file: ./secrets/db_password.txt
   secret_db_root_pw:
     file: ./secrets/db_root_password.txt
+
+# testing gid add 
