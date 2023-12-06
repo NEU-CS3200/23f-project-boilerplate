@@ -478,3 +478,20 @@ def get_cafe_reviews(cafe_id):
         json_data.append(dict(zip(column_headers, row)))
 
     return jsonify(json_data)
+
+@cafe.route('/cafe/filters', methods=['GET'])
+def get_cafe_filters():
+    filterArray = [{"value": "Lowest Prices", "key": "Lowest Prices"}, 
+            {"value": "Fastest Service", "key": "Fastest Service"}, 
+            {"value": "Has wifi", "key": "Has wifi"}, 
+            {"value": "Has outlets", "key": "Has outlets"}, 
+            {"value": "Promotions", "key": "Promotions"}]
+    
+    return jsonify(filterArray)
+
+@cafe.route('/cafe/personas', methods=['GET'])
+def get_cafe_personas():
+    personasArray = [{"value": "Customer", "key": "Customer"}, 
+            {"value": "Business Owner", "key": "Business Owner"}]
+    
+    return jsonify(personasArray)
