@@ -1,3 +1,8 @@
+########################################################
+# Sample customers blueprint of endpoints
+# Remove this file if you are not using it in your project
+########################################################
+
 from flask import Blueprint, request, jsonify, make_response, current_app
 import json
 from src import db
@@ -155,3 +160,10 @@ def get_all_categories():
         json_data.append(dict(zip(column_headers, row)))
     
     return jsonify(json_data)
+
+
+@products.route('/product', methods = ['PUT'])
+def update_product():
+    product_info = request.json
+    current_app.logger.info(product_info)
+    return "Success"

@@ -2,11 +2,12 @@
 # Main application interface
 ###
 
-# import the create app function 
+# import the create_app function 
 # that lives in src/__init__.py
 from src import create_app
 
-# create the app object
+# call the create_app function to initialize the 
+# Flask app object
 app = create_app()
 
 if __name__ == '__main__':
